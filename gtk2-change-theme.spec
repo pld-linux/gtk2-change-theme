@@ -3,7 +3,7 @@ Summary:	Gtk+2 theme changer
 Summary(pl):	Program zmieniaj±cy motyw Gtk+2
 Name:		gtk2-change-theme
 Version:	0.3.1
-Release:	1
+Release:	2
 License:	GPL v2
 Group:		Applications
 Source0:	http://plasmasturm.org/programs/gtk-chtheme/%{_rnam}-%{version}.tar.bz2
