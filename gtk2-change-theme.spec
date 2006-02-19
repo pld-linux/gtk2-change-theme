@@ -9,7 +9,7 @@ Group:		Applications
 Source0:	http://plasmasturm.org/programs/gtk-chtheme/%{_rnam}-%{version}.tar.bz2
 # Source0-md5:	f688053bf26dd6c4f1cd0bf2ee33de2a
 URL:		http://plasmasturm.org/programs/gtk-chtheme/
-BuildRequires:	gtk+2-devel
+BuildRequires:	gtk+2-devel >= 2.0.0
 BuildRequires:	pkgconfig
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -25,7 +25,9 @@ Gtk+2.
 %setup -q -n %{_rnam}-%{version}
 
 %build
-%{__make}
+%{__make} \
+	CC="%{__cc}" \
+	RPM_OPT_FLAGS="%{rpmcflags}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
