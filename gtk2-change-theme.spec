@@ -4,11 +4,13 @@ Summary(hu.UTF-8):	Gtk+2 theme változtató
 Summary(pl.UTF-8):	Program zmieniający motyw Gtk+2
 Name:		gtk2-change-theme
 Version:	0.3.1
-Release:	3
+Release:	4
 License:	GPL v2
 Group:		Applications
 Source0:	http://plasmasturm.org/programs/gtk-chtheme/%{_rnam}-%{version}.tar.bz2
 # Source0-md5:	f688053bf26dd6c4f1cd0bf2ee33de2a
+Source1:	gtk-chtheme.desktop
+Source2:	gtk-chtheme.xpm
 URL:		http://plasmasturm.org/programs/gtk-chtheme/
 BuildRequires:	gtk+2-devel >= 2.0.0
 BuildRequires:	pkgconfig
@@ -41,6 +43,10 @@ rm -rf $RPM_BUILD_ROOT
 	DESTDIR=$RPM_BUILD_ROOT \
 	PREFIX=%{_prefix}
 
+install -d $RPM_BUILD_ROOT{%{_desktopdir},%{_pixmapsdir}}
+install %{SOURCE1} $RPM_BUILD_ROOT%{_desktopdir}
+install %{SOURCE2} $RPM_BUILD_ROOT%{_pixmapsdir}
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -49,3 +55,5 @@ rm -rf $RPM_BUILD_ROOT
 %doc ChangeLog
 %attr(755,root,root) %{_bindir}/*
 %{_mandir}/man1/*
+%{_desktopdir}/*
+%{_pixmapsdir}/*
