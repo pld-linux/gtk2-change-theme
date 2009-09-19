@@ -1,11 +1,9 @@
 [Desktop Entry]
-Version=1.0
-Encoding=UTF-8
 Name=Gtk-ChTheme
-GenericName=GTK+ 2.0 theme changer and previewer utility
+GenericName=Theme Changer
 Comment=GTK+2.0 Theme Changer
-Exec=/usr/bin/gtk-chtheme
+Exec=gtk-chtheme
 Terminal=false
 Type=Application
-Icon=/usr/share/pixmaps/gtk-chtheme.xpm
-Categories=DesktopSettings;System;
+Icon=gtk-chtheme
+Categories=Gtk;DesktopSettings;System;
