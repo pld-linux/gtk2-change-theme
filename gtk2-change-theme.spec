@@ -1,5 +1,6 @@
 %define		_rnam gtk-chtheme
 Summary:	Gtk+2 theme changer
+Summary(hu.UTF-8):	Gtk+2 theme változtató
 Summary(pl.UTF-8):	Program zmieniający motyw Gtk+2
 Name:		gtk2-change-theme
 Version:	0.3.1
@@ -16,6 +17,10 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 Gtk+ 2.0 Change Theme provides an easy way to change Gtk+2 theme on
 the fly.
+
+%description -l hu.UTF-8
+Gtk+ 2.0 Change Theme egy egyszerű utat biztosít, hogy a Gtk+2 témát
+változtasd meg röptében.
 
 %description -l pl.UTF-8
 Gtk+ 2.0 Change Theme umożliwia w łatwy sposób zmianę w locie motywu
