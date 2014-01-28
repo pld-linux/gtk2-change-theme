@@ -1,0 +1,23 @@
+diff -up gtk-chtheme-0.3.1/about_dialog.c.fix gtk-chtheme-0.3.1/about_dialog.c
+--- gtk-chtheme-0.3.1/about_dialog.c.fix	2012-03-22 14:24:17.502746629 -0400
++++ gtk-chtheme-0.3.1/about_dialog.c	2012-03-22 14:24:20.537719693 -0400
+@@ -39,7 +39,6 @@ void show_about_dialog(void) {
+ 	GtkWidget* about_dlg = gtk_dialog_new();
+ 	gtk_window_set_title(GTK_WINDOW(about_dlg), "About");
+ 	gtk_window_set_resizable(GTK_WINDOW(about_dlg), FALSE);
+-	gtk_dialog_set_has_separator(GTK_DIALOG(about_dlg), FALSE);
+ 	gtk_container_set_border_width(GTK_CONTAINER(GTK_DIALOG(about_dlg)->vbox), 20);
+ 	
+ 	GtkWidget* about = GTK_WIDGET(gtk_label_new_from_pango_markup((ABOUT), GTK_JUSTIFY_CENTER));
+diff -up gtk-chtheme-0.3.1/theme_sel.c.fix gtk-chtheme-0.3.1/theme_sel.c
+--- gtk-chtheme-0.3.1/theme_sel.c.fix	2012-03-22 14:20:43.743651593 -0400
++++ gtk-chtheme-0.3.1/theme_sel.c	2012-03-22 14:23:34.217131165 -0400
+@@ -110,7 +110,7 @@ GtkWidget *create_theme_sel(void)
+ 		GTK_POLICY_AUTOMATIC, GTK_POLICY_AUTOMATIC);
+ 	gtk_container_add(GTK_CONTAINER(sw), theme_list);
+ 
+-	gtk_timeout_add(0, (GtkFunction)theme_list_focus, theme_list);
++	g_timeout_add(0, (GSourceFunc)theme_list_focus, theme_list);
+ 
+ 	return sw;
+ }

@@ -11,6 +11,9 @@ Source0:	http://plasmasturm.org/programs/gtk-chtheme/%{_rnam}-%{version}.tar.bz2
 # Source0-md5:	f688053bf26dd6c4f1cd0bf2ee33de2a
 Source1:	gtk-chtheme.desktop
 Source2:	gtk-chtheme.xpm
+Patch0:		gtk-chtheme-build-fix.patch
+Patch1:		gtk-chtheme-new-api.patch
+Patch2:		gtk-chtheme-nostrip.patch
 URL:		http://plasmasturm.org/programs/gtk-chtheme/
 BuildRequires:	gtk+2-devel >= 2.0.0
 BuildRequires:	pkgconfig
@@ -30,6 +33,9 @@ Gtk+2.
 
 %prep
 %setup -q -n %{_rnam}-%{version}
+%patch0 -p1
+%patch1 -p1
+%patch2 -p0
 
 %build
 %{__make} \

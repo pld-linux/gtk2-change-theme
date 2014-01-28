@@ -1,0 +1,10 @@
+--- Makefile.orig	2010-05-04 17:22:25.127295630 -0300
++++ Makefile	2010-05-04 17:22:44.000000000 -0300
+@@ -38,7 +38,6 @@
+ 	-rm -f $(EXENAME).spec $(EXENAME).1 Makefile.bak
+ 
+ install: all
+-	strip      $(EXENAME)
+ 	install -d              $(DESTDIR)/$(BINDIR)
+ 	install -c $(EXENAME)   $(DESTDIR)/$(BINDIR)
+ 	install -d              $(DESTDIR)/$(MANDIR)/man1
